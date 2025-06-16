@@ -1,5 +1,6 @@
 let url= "http://universities.hipolabs.com/search?name=";
 let btn= document.querySelector("button");
+let inp= document.querySelector("input");
 
 btn.addEventListener("click", async()=>{
     let country= document.querySelector("input").value;
@@ -7,6 +8,14 @@ btn.addEventListener("click", async()=>{
     let colArr= await getColleges(country);
     
     show(colArr);
+});
+inp.addEventListener("keydown",async()=> {
+    let country= document.querySelector("input").value;
+    console.log(country);
+    let colArr= await getColleges(country);
+    
+    show(colArr);
+    
 });
 function show(colArr){
     let list= document.querySelector("#list");
